@@ -1,0 +1,24 @@
+<h1> Edit <%= dish.name %> </h1>
+
+<form action="/dishes/<%= dish._id %>?_method=PUT" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" value="<%= dish.name %>" required />
+
+  <label>Cuisine:</label>
+    <input type="text" name="cuisine" value="<%= dish.cuisine %>" />
+
+    <label>Spicy Level (0-5):</label>
+    <input type="number" name="spicyLevel" min="0" max="5" value="<%= dish.spicyLevel %>" />
+
+    <label>Price:</label>
+    <input type="number" name="price" step="0.01" value="<%= dish.price %>" required />
+
+    <label>Available:</label>
+    <input type="checkbox" name="isAvailable" <%= dish.isAvailable ? 'checked' : '' %> />
+
+    <button type="submit">Update Dish</button>
+</form>
+
+<a href="/dishes/<%= dish._id %>"> Back to Dish Details </a>
+
+

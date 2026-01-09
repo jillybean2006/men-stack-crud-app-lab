@@ -1,0 +1,14 @@
+<h1><%= dish.name %></h1>
+
+<p><strong>Cuisine:</strong> <%= dish.cuisine %></p>
+<p><strong>Spicy Level:</strong> <%= dish.spicyLevel %> / 5</p>
+<p><strong>Price:</strong> $<%= dish.price %></p>
+<p><strong>Available:</strong> <%= dish.isAvailable ? 'Yes' : 'No' %></p>
+
+<a href="/dishes"/<% dish._id %>/edit"> Edit Dish </a>
+
+<form action="/dishes/<%= dish._id %>?_method=DELETE" method="POST" style="display:inline;">
+  <button type="submit">Delete Dish</button>
+</form>
+
+<a href="/dishes"> Back to Menu </a>
