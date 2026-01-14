@@ -29,10 +29,6 @@ mongoose.connect(process.env.MONGODB_URI)
         res.redirect("/dishes");
     });
 
-    app.listen(process.env.PORT || 3000, () => {
-        console.log(`Server is running on port ${process.env.PORT || 3000}`);
-    });
-
 
 
     app.get("/dishes", async (req, res) => {
@@ -69,4 +65,8 @@ mongoose.connect(process.env.MONGODB_URI)
     app.delete("/dishes/:id", async (req, res) => {
         await Dish.findByIdAndDelete(req.params.id);
         res.redirect("/dishes");
+    });
+
+    app.listen(process.env.PORT || 3000, () => {
+        console.log(`Server is running on port ${process.env.PORT || 3000}`);
     });
