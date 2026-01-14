@@ -1,0 +1,22 @@
+<h1> New dish </h1>
+
+<form action="/dishes" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" required />
+
+  <label>Cuisine:</label>
+    <input type="text" name="cuisine" />
+
+    <label>Spicy Level (0-5):</label>
+    <input type="number" name="spicyLevel" min="0" max="5" />
+
+    <label>Price:</label>
+    <input type="number" name="price" step="0.01" required />
+
+    <label>Available:</label>
+    <input type="checkbox" name="isAvailable" checked />
+
+    <button type="submit">Create Dish</button>
+</form>
+
+<a href="/dishes"> Back to Menu </a>

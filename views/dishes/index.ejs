@@ -1,0 +1,15 @@
+<h1> Menu </h1>
+
+<a href="/dishes/new"> Add New Dish </a>
+
+
+<ul>
+  <% dishes.forEach(dish => { %>
+    <li>
+      <a href="/dishes/<%= dish._id %>"> 
+        <%= dish.name %> - $<%= dish.price %> </a>
+      (<%= dish.cuisine %>)
+    </li>
+  <% }) %>
+</ul>
+
